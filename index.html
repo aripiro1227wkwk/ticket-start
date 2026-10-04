@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Ticket START</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f5f5;
+      color: #111;
+      font-family:
+        "Meiryo UI",
+        "Meiryo",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: #fff;
+      padding-bottom: 50px;
+    }
+
+    /* =========================
+       ヘッダー
+    ========================= */
+
+    .header {
+      background: #d60000;
+      color: #fff;
+      padding:
+        calc(18px + env(safe-area-inset-top))
+        20px
+        18px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    /* =========================
+       共通
+    ========================= */
+
+    .page {
+      display: none;
+      padding: 18px 16px 30px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .page-title {
+      margin: 2px 0 18px;
+      font-size: 22px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e1e1e1;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .small {
+      color: #666;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .red {
+      color: #d60000;
+    }
+
+    /* =========================
+       ホーム
+    ========================= */
+
+    .event-name {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .sale-date {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .count-label {
+      text-align: center;
+      margin-top: 26px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .countdown {
+      text-align: center;
+      margin: 12px 0 8px;
+      font-size: clamp(31px, 10vw, 46px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .milliseconds {
+      font-size: 19px;
+    }
+
+    .status {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      min-height: 20px;
+      margin-bottom: 18px;
+    }
+
+    .open-button {
+      width: 100%;
+      min-height: 60px;
+      border: 0;
+      border-radius: 12px;
+      background: #d60000;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .open-button:active {
+      transform: scale(0.99);
+    }
+
+    .open-button:disabled {
+      background: #aaa;
+      cursor: default;
+    }
+
+    .quick-info {
+      margin-top: 14px;
+      padding: 13px;
+      background: #fff6f6;
+      border-left: 4px solid #d60000;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       メニュー
+    ========================= */
+
+    .menu {
+      margin-top: 22px;
+    }
+
+    .menu-button {
+      width: 100%;
+      min-height: 58px;
+      margin-bottom: 10px;
+      padding: 0 16px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .menu-button span:last-child {
+      color: #999;
+      font-size: 20px;
+    }
+
+    /* =========================
+       フォーム
+    ========================= */
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 9px;
+      background: #fff;
+      font-size: 16px;
+    }
+
+    .save-button {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 10px;
+      background: #d60000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-button {
+      border: 0;
+      background: transparent;
+      padding: 2px 0 15px;
+      color: #d60000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* =========================
+       入力情報
+    ========================= */
+
+    .person {
+      width: 100%;
+      min-height: 58px;
+      margin-bottom: 10px;
+      padding: 0 15px;
+      border: 1px solid #ddd;
+      border-radius: 11px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .add-person {
+      width: 100%;
+      min-height: 52px;
+      margin-top: 10px;
+      border: 2px dashed #d60000;
+      border-radius: 11px;
+      background: #fff;
+      color: #d60000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* =========================
+       購入手順
+    ========================= */
+
+    .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .step-number {
+      width: 35px;
+      height: 35px;
+      min-width: 35px;
+      border-radius: 50%;
+      background: #d60000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .step-text {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       フッター
+    ========================= */
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 11px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <header class="header">
+    <h1>Ticket START</h1>
+    <p>先着チケット購入サポート</p>
+  </header>
+
+
+  <!-- =====================
+       ホーム
+  ====================== -->
+
+  <main id="homePage" class="page active">
+
+    <div class="card">
+
+      <div id="homeEventName" class="event-name">
+        公演未設定
+      </div>
+
+      <div id="homeSaleDate" class="sale-date">
+        販売日時を設定してください
+      </div>
+
+      <div class="count-label">
+        販売開始まで
+      </div>
+
+      <div id="countdown" class="countdown">
+        --:--:--<span class="milliseconds">.---</span>
+      </div>
+
+      <div id="status" class="status">
+        販売設定をするとカウントダウンが始まります
+      </div>
+
+      <button
+        id="openTicketButton"
+        class="open-button"
+        onclick="openTicketPage()"
+        disabled>
+        今すぐぴあを開く
+      </button>
+
+      <div id="quickInfo" class="quick-info">
+        <b>今回の設定</b><br>
+        公演日：未設定<br>
+        席種：未設定<br>
+        枚数：未設定<br>
+        入力情報：未選択
+      </div>
+
+    </div>
+
+
+    <div class="menu">
+
+      <button
+        class="menu-button"
+        onclick="showPage('settingsPage')">
+        <span>⚙ 販売設定</span>
+        <span>›</span>
+      </button>
+
+      <button
+        class="menu-button"
+        onclick="showPage('peoplePage')">
+        <span>👤 入力準備メモ</span>
+        <span>›</span>
+      </button>
+
+      <button
+        class="menu-button"
+        onclick="showPage('stepsPage')">
+        <span>✓ 購入手順</span>
+        <span>›</span>
+      </button>
+
+      <button
+        class="menu-button"
+        onclick="showPage('helpPage')">
+        <span>？ 使い方</span>
+        <span>›</span>
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================
+       販売設定
+  ====================== -->
+
+  <main id="settingsPage" class="page">
+
+    <button
+      class="back-button"
+      onclick="showPage('homePage')">
+      ← ホームに戻る
+    </button>
+
+    <h2 class="page-title">
+      販売設定
+    </h2>
+
+    <div class="card">
+
+      <div class="form-group">
+        <label>公演名</label>
+        <input
+          id="eventName"
+          type="text"
+          placeholder="例：○○ LIVE 2026">
+      </div>
+
+      <div class="form-group">
+        <label>販売開始日時</label>
+        <input
+          id="saleDate"
+          type="datetime-local"
+          step="1">
+      </div>
+
+      <div class="form-group">
+        <label>ぴあ販売ページURL</label>
+        <input
+          id="ticketUrl"
+          type="url"
+          placeholder="https://ticket.pia.jp/...">
+      </div>
+
+      <div class="form-group">
+        <label>狙う公演日</label>
+        <input
+          id="targetDate"
+          type="text"
+          placeholder="例：10月10日 18:00">
+      </div>
+
+      <div class="form-group">
+        <label>席種</label>
+        <input
+          id="seatType"
+          type="text"
+          placeholder="例：全席指定">
+      </div>
+
+      <div class="form-group">
+        <label>枚数</label>
+        <select id="ticketCount">
+          <option value="">選択してください</option>
+          <option value="1枚">1枚</option>
+          <option value="2枚">2枚</option>
+          <option value="3枚">3枚</option>
+          <option value="4枚">4枚</option>
+        </select>
+      </div>
+
+      <button
+        class="save-button"
+        onclick="saveSettings()">
+        設定を保存
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================
+       入力準備メモ
+  ====================== -->
+
+  <main id="peoplePage" class="page">
+
+    <button
+      class="back-button"
+      onclick="showPage('homePage')">
+      ← ホームに戻る
+    </button>
+
+    <h2 class="page-title">
+      入力準備メモ
+    </h2>
+
+    <div class="card">
+
+      <p class="small">
+        今回使用する情報を選択
+      </p>
+
+      <button class="person">
+        <span>👤 自分</span>
+        <span>›</span>
+      </button>
+
+      <button class="person">
+        <span>👤 友達A</span>
+        <span>›</span>
+      </button>
+
+      <button class="person">
+        <span>👤 友達B</span>
+        <span>›</span>
+      </button>
+
+      <button class="add-person">
+        ＋ 新しい人を追加
+      </button>
+
+    </div>
+
+    <p class="small">
+      ※この画面は現在デザイン確認用です。<br>
+      次の工程で追加・編集・削除・コピー機能を付けます。
+    </p>
+
+  </main>
+
+
+  <!-- =====================
+       購入手順
+  ====================== -->
+
+  <main id="stepsPage" class="page">
+
+    <button
+      class="back-button"
+      onclick="showPage('homePage')">
+      ← ホームに戻る
+    </button>
+
+    <h2 class="page-title">
+      購入手順
+    </h2>
+
+    <div class="card">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-text">
+          注意事項に同意
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-text">
+          日にちを選択
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-text">
+          席種を選択
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-text">
+          枚数を選択
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-text">
+          内容を確認して同意
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-text">
+          購入者情報を入力
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================
+       使い方
+  ====================== -->
+
+  <main id="helpPage" class="page">
+
+    <button
+      class="back-button"
+      onclick="showPage('homePage')">
+      ← ホームに戻る
+    </button>
+
+    <h2 class="page-title">
+      使い方
+    </h2>
+
+    <div class="card">
+
+      <p class="small">
+        ① 事前に販売設定を保存します。
+      </p>
+
+      <p class="small">
+        ② 販売開始前にこのサイトを開きます。
+      </p>
+
+      <p class="small">
+        ③ カウントダウンを確認します。
+      </p>
+
+      <p class="small">
+        ④ 販売開始後は「ぴあを開く」ボタンから
+        販売ページを開けます。
+      </p>
+
+      <p class="small">
+        ⑤ ページが開けなかった場合はブラウザで戻り、
+        もう一度ボタンを押します。
+      </p>
+
+      <p class="small red">
+        ※購入操作そのものを自動化するサイトではありません。
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <footer class="footer">
+    個人用 Ticket START
+  </footer>
+
+</div>
+
+
+<script>
+
+  const STORAGE_KEY = "ticketStartSettings";
+
+  let settings = {
+    eventName: "",
+    saleDate: "",
+    ticketUrl: "",
+    targetDate: "",
+    seatType: "",
+    ticketCount: "",
+    selectedPerson: ""
+  };
+
+
+  /* =========================
+     ページ切替
+  ========================= */
+
+  function showPage(pageId) {
+
+    document
+      .querySelectorAll(".page")
+      .forEach(page => {
+        page.classList.remove("active");
+      });
+
+    document
+      .getElementById(pageId)
+      .classList.add("active");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  }
+
+
+  /* =========================
+     保存
+  ========================= */
+
+  function saveSettings() {
+
+    settings.eventName =
+      document.getElementById("eventName").value.trim();
+
+    settings.saleDate =
+      document.getElementById("saleDate").value;
+
+    settings.ticketUrl =
+      document.getElementById("ticketUrl").value.trim();
+
+    settings.targetDate =
+      document.getElementById("targetDate").value.trim();
+
+    settings.seatType =
+      document.getElementById("seatType").value.trim();
+
+    settings.ticketCount =
+      document.getElementById("ticketCount").value;
+
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(settings)
+    );
+
+
+    updateHome();
+
+    alert("保存しました");
+
+    showPage("homePage");
+  }
+
+
+  /* =========================
+     読み込み
+  ========================= */
+
+  function loadSettings() {
+
+    const saved =
+      localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+
+      try {
+
+        settings = {
+          ...settings,
+          ...JSON.parse(saved)
+        };
+
+      } catch (error) {
+
+        console.error(error);
+
+      }
+
+    }
+
+
+    document.getElementById("eventName").value =
+      settings.eventName || "";
+
+    document.getElementById("saleDate").value =
+      settings.saleDate || "";
+
+    document.getElementById("ticketUrl").value =
+      settings.ticketUrl || "";
+
+    document.getElementById("targetDate").value =
+      settings.targetDate || "";
+
+    document.getElementById("seatType").value =
+      settings.seatType || "";
+
+    document.getElementById("ticketCount").value =
+      settings.ticketCount || "";
+
+
+    updateHome();
+  }
+
+
+  /* =========================
+     ホーム更新
+  ========================= */
+
+  function updateHome() {
+
+    const eventName =
+      settings.eventName || "公演未設定";
+
+    document.getElementById("homeEventName")
+      .textContent = eventName;
+
+
+    if (settings.saleDate) {
+
+      const date =
+        new Date(settings.saleDate);
+
+      document.getElementById("homeSaleDate")
+        .textContent =
+          "販売開始：" +
+          date.toLocaleString("ja-JP");
+
+    } else {
+
+      document.getElementById("homeSaleDate")
+        .textContent =
+          "販売日時を設定してください";
+
+    }
+
+
+    document.getElementById("quickInfo")
+      .innerHTML = `
+        <b>今回の設定</b><br>
+        公演日：${escapeHtml(settings.targetDate || "未設定")}<br>
+        席種：${escapeHtml(settings.seatType || "未設定")}<br>
+        枚数：${escapeHtml(settings.ticketCount || "未設定")}<br>
+        入力情報：${escapeHtml(settings.selectedPerson || "未選択")}
+      `;
+
+
+    const button =
+      document.getElementById("openTicketButton");
+
+    button.disabled =
+      !settings.ticketUrl;
+  }
+
+
+  /* =========================
+     カウントダウン
+  ========================= */
+
+  function updateCountdown() {
+
+    const countdown =
+      document.getElementById("countdown");
+
+    const status =
+      document.getElementById("status");
+
+    const button =
+      document.getElementById("openTicketButton");
+
+
+    if (!settings.saleDate) {
+
+      countdown.innerHTML =
+        '--:--:--<span class="milliseconds">.---</span>';
+
+      return;
+    }
+
+
+    const target =
+      new Date(settings.saleDate).getTime();
+
+    const now =
+      Date.now();
+
+    let diff =
+      target - now;
+
+
+    if (diff <= 0) {
+
+      countdown.innerHTML =
+        '00:00:00<span class="milliseconds">.000</span>';
+
+      status.textContent =
+        "販売開始済み";
+
+      if (settings.ticketUrl) {
+        button.textContent =
+          "もう一度ぴあを開く";
+      }
+
+      return;
+    }
+
+
+    const hours =
+      Math.floor(diff / 3600000);
+
+    diff %= 3600000;
+
+
+    const minutes =
+      Math.floor(diff / 60000);
+
+    diff %= 60000;
+
+
+    const seconds =
+      Math.floor(diff / 1000);
+
+    const milliseconds =
+      diff % 1000;
+
+
+    countdown.innerHTML =
+      `${pad(hours)}:${pad(minutes)}:${pad(seconds)}` +
+      `<span class="milliseconds">.${String(milliseconds).padStart(3,"0")}</span>`;
+
+
+    status.textContent =
+      "販売開始前です";
+
+    if (settings.ticketUrl) {
+      button.textContent =
+        "今すぐぴあを開く";
+    }
+  }
+
+
+  function pad(number) {
+    return String(number).padStart(2, "0");
+  }
+
+
+  /* =========================
+     ぴあを開く
+  ========================= */
+
+  function openTicketPage() {
+
+    if (!settings.ticketUrl) {
+      alert("販売ページURLが設定されていません");
+      return;
+    }
+
+    try {
+
+      const url =
+        new URL(settings.ticketUrl);
+
+      if (
+        url.protocol !== "https:" &&
+        url.protocol !== "http:"
+      ) {
+        throw new Error();
+      }
+
+      window.location.href =
+        url.href;
+
+    } catch (error) {
+
+      alert("URLを確認してください");
+
+    }
+  }
+
+
+  /* =========================
+     HTML表示用
+  ========================= */
+
+  function escapeHtml(value) {
+
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+
+  /* =========================
+     起動
+  ========================= */
+
+  loadSettings();
+
+  updateCountdown();
+
+  setInterval(
+    updateCountdown,
+    50
+  );
+
+</script>
+
+</body>
+</html>
