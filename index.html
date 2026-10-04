@@ -19,7 +19,6 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   width:100%;max-width:480px;min-height:100vh;
   margin:auto;background:#fff;padding-bottom:45px;
 }
-
 .header{
   background:#d60000;color:#fff;text-align:center;
   padding:calc(18px + env(safe-area-inset-top)) 20px 18px;
@@ -44,7 +43,6 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   border:0;background:none;color:#d60000;
   font-weight:bold;padding:2px 0 15px;
 }
-
 .primary{
   width:100%;min-height:52px;border:0;border-radius:10px;
   background:#d60000;color:#fff;font-weight:bold;font-size:16px;
@@ -94,31 +92,16 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   font-weight:bold;text-align:left;
 }
 
-.performanceMain{
-  display:block;
-  flex:1;
-  min-width:0;
-}
-
+.performanceMain{display:block;flex:1;min-width:0}
 .performanceName{
-  display:block;
-  font-size:15px;
-  word-break:break-word;
+  display:block;font-size:15px;word-break:break-word;
 }
-
 .performanceInfo{
-  display:block;
-  margin-top:5px;
-  color:#777;
-  font-size:11px;
-  font-weight:normal;
-  line-height:1.5;
+  display:block;margin-top:5px;color:#777;
+  font-size:11px;font-weight:normal;line-height:1.5;
 }
-
 .check{
-  color:#d60000;
-  font-size:12px;
-  margin-left:6px;
+  color:#d60000;font-size:12px;margin-left:6px;
 }
 
 .add{
@@ -127,11 +110,9 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 }
 
 .group{margin-bottom:16px}
-
 .group label{
   display:block;font-size:13px;font-weight:bold;margin-bottom:7px;
 }
-
 .group input,.group select{
   width:100%;min-height:48px;padding:10px 12px;
   border:1px solid #ccc;border-radius:9px;background:#fff;font-size:16px;
@@ -158,11 +139,9 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   display:grid;grid-template-columns:1fr 1fr;
   gap:10px;margin-top:10px;
 }
-
 .editBtn,.deleteBtn{
   min-height:48px;border-radius:9px;background:#fff;font-weight:bold;
 }
-
 .editBtn{border:1px solid #111}
 .deleteBtn{border:1px solid #bbb;background:#f5f5f5;color:#555}
 
@@ -222,10 +201,9 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
     </button>
 
   </div>
-
 </main>
 
-<!-- PERFORMANCE LIST -->
+<!-- 公演一覧 -->
 <main id="performancesPage" class="page">
 
   <button class="back" onclick="show('homePage')">
@@ -237,7 +215,7 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   <div class="card">
 
     <p class="small">
-      公演を複数登録できます。今回申し込む公演を1つ選択してください。
+      公演を複数登録できます。今回使用する公演を1つ選択してください。
     </p>
 
     <div id="performanceList"></div>
@@ -255,7 +233,7 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 </main>
 
-<!-- PERFORMANCE FORM -->
+<!-- 公演入力 -->
 <main id="performanceFormPage" class="page">
 
   <button class="back" onclick="openPerformances()">
@@ -295,7 +273,6 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
     <div class="group">
       <label>枚数</label>
-
       <select id="ticketCount">
         <option value="">選択してください</option>
         <option>1枚</option>
@@ -310,19 +287,16 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
     </button>
 
   </div>
-
 </main>
 
-<!-- PERFORMANCE DETAIL -->
+<!-- 公演詳細 -->
 <main id="performanceDetailPage" class="page">
 
   <button class="back" onclick="openPerformances()">
     ← 公演一覧に戻る
   </button>
 
-  <h2 id="performanceDetailTitle" class="page-title">
-    公演詳細
-  </h2>
+  <h2 id="performanceDetailTitle" class="page-title">公演詳細</h2>
 
   <div id="performanceSelectedNotice"></div>
 
@@ -333,18 +307,13 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   </button>
 
   <div class="actionGrid">
-    <button class="editBtn" onclick="editCurrentPerformance()">
-      編集
-    </button>
-
-    <button class="deleteBtn" onclick="deleteCurrentPerformance()">
-      削除
-    </button>
+    <button class="editBtn" onclick="editCurrentPerformance()">編集</button>
+    <button class="deleteBtn" onclick="deleteCurrentPerformance()">削除</button>
   </div>
 
 </main>
 
-<!-- PEOPLE -->
+<!-- 個人情報一覧 -->
 <main id="peoplePage" class="page">
 
   <button class="back" onclick="show('homePage')">
@@ -375,16 +344,14 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 </main>
 
-<!-- PERSON FORM -->
+<!-- 個人情報入力 -->
 <main id="personFormPage" class="page">
 
   <button class="back" onclick="openPeople()">
     ← 一覧に戻る
   </button>
 
-  <h2 id="personFormTitle" class="page-title">
-    新しい人を追加
-  </h2>
+  <h2 id="personFormTitle" class="page-title">新しい人を追加</h2>
 
   <div class="card">
 
@@ -433,10 +400,9 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
     </button>
 
   </div>
-
 </main>
 
-<!-- PERSON DETAIL -->
+<!-- 個人情報詳細 -->
 <main id="personDetailPage" class="page">
 
   <button class="back" onclick="openPeople()">
@@ -446,7 +412,6 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   <h2 id="detailTitle" class="page-title">個人情報</h2>
 
   <div id="selectedNotice"></div>
-
   <div id="personDetail" class="card"></div>
 
   <button class="primary" onclick="selectCurrentPerson()">
@@ -460,7 +425,7 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 </main>
 
-<!-- HELP -->
+<!-- 使い方 -->
 <main id="helpPage" class="page">
 
   <button class="back" onclick="show('homePage')">
@@ -472,24 +437,19 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   <div class="card small">
 
     <p>① 公演設定から公演を登録します。</p>
-
-    <p>② 複数公演を登録した場合は、今回使用する公演を選択します。</p>
-
-    <p>③ 個人情報から必要な情報を登録し、今回使用する人を選択します。</p>
-
-    <p>④ 販売開始前にホーム画面を開き、画面をONにしたまま待機します。</p>
-
-    <p>⑤ 販売開始時刻になると、選択中の公演の販売ページを1回だけ開きます。</p>
-
+    <p>② 複数登録した場合は、今回使用する公演を選択します。</p>
+    <p>③ 個人情報を登録し、今回使用する人を選択します。</p>
+    <p>④ 販売開始前にホームを開き、画面をONにしたまま待機します。</p>
+    <p>⑤ 待機中に販売開始時刻になると、販売ページを1回だけ開きます。</p>
     <p>⑥ 開けなかった場合はブラウザで戻り、「もう一度ぴあを開く」を押します。</p>
 
     <p class="red">
+      ※販売開始後にTicket STARTを開いた場合は、自動では販売ページを開きません。<br>
       ※ブラウザや通信状況によって移動時刻には誤差が出る場合があります。<br>
       ※ページの連続更新や購入操作を自動化する機能ではありません。
     </p>
 
   </div>
-
 </main>
 
 <footer class="footer">
@@ -522,10 +482,16 @@ let editingPerformanceId=null;
 
 let autoNavigationStarted=false;
 
+/*
+  このページを開いている間に
+  「販売開始前」を実際に確認した公演だけを記録する。
 
-/* =========================
-   共通
-========================= */
+  これが今回の重要な修正。
+*/
+const armedPerformances=new Set();
+
+
+/* ---------- 共通 ---------- */
 
 function show(id){
 
@@ -604,9 +570,7 @@ function selectedPerson(){
 }
 
 
-/* =========================
-   読み込み
-========================= */
+/* ---------- 読み込み ---------- */
 
 function loadAll(){
 
@@ -640,6 +604,7 @@ function loadAll(){
       JSON.parse(localStorage.getItem(APP_KEY));
 
     if(savedApp){
+
       appSettings={
         ...appSettings,
         ...savedApp
@@ -650,13 +615,9 @@ function loadAll(){
 
 
   /*
-    旧バージョンからの引き継ぎ
-
-    以前の「販売設定」に公演が登録されていて、
-    新しい公演一覧がまだ空の場合だけ、
-    その設定を1件の公演として移行する。
+    旧バージョンの販売設定を、
+    公演一覧がまだ空のときだけ1件として移行。
   */
-
   if(!performances.length){
 
     try{
@@ -693,7 +654,9 @@ function loadAll(){
 
         if(
           old.selectedPersonId &&
-          people.some(p=>p.id===old.selectedPersonId)
+          people.some(
+            p=>p.id===old.selectedPersonId
+          )
         ){
           appSettings.selectedPersonId=
             old.selectedPersonId;
@@ -707,13 +670,11 @@ function loadAll(){
   }
 
 
-  /*
-    選択済みIDが存在しなくなっていた場合の整理
-  */
-
   if(
     appSettings.selectedPersonId &&
-    !people.some(p=>p.id===appSettings.selectedPersonId)
+    !people.some(
+      p=>p.id===appSettings.selectedPersonId
+    )
   ){
     appSettings.selectedPersonId="";
   }
@@ -730,14 +691,11 @@ function loadAll(){
 
 
   saveAppSettings();
-
   updateHome();
 }
 
 
-/* =========================
-   公演設定
-========================= */
+/* ---------- 公演設定 ---------- */
 
 function openPerformances(){
 
@@ -763,24 +721,21 @@ function renderPerformances(){
   }
 
 
-  /*
-    販売開始日時の早い順に表示
-  */
+  const sorted=
+    [...performances].sort((a,b)=>{
 
-  const sorted=[...performances].sort((a,b)=>{
+      const at=
+        a.saleDate
+          ? new Date(a.saleDate).getTime()
+          : Number.MAX_SAFE_INTEGER;
 
-    const at=
-      a.saleDate
-        ? new Date(a.saleDate).getTime()
-        : Number.MAX_SAFE_INTEGER;
+      const bt=
+        b.saleDate
+          ? new Date(b.saleDate).getTime()
+          : Number.MAX_SAFE_INTEGER;
 
-    const bt=
-      b.saleDate
-        ? new Date(b.saleDate).getTime()
-        : Number.MAX_SAFE_INTEGER;
-
-    return at-bt;
-  });
+      return at-bt;
+    });
 
 
   list.innerHTML=
@@ -791,15 +746,18 @@ function renderPerformances(){
 
       let saleText="販売開始未設定";
 
+
       if(p.saleDate){
 
         const d=new Date(p.saleDate);
 
         if(!Number.isNaN(d.getTime())){
+
           saleText=
             "販売開始："+d.toLocaleString("ja-JP");
         }
       }
+
 
       return `
         <button
@@ -810,12 +768,17 @@ function renderPerformances(){
           <span class="performanceMain">
 
             <span class="performanceName">
+
               ${esc(p.eventName || "名称未設定")}
+
               ${
                 selected
-                  ? `<span class="check">✓ 今回使用中</span>`
+                  ? `<span class="check">
+                       ✓ 今回使用中
+                     </span>`
                   : ""
               }
+
             </span>
 
             <span class="performanceInfo">
@@ -893,7 +856,8 @@ function savePerformance(){
 
     try{
 
-      const url=new URL(data.ticketUrl);
+      const url=
+        new URL(data.ticketUrl);
 
       if(
         url.protocol!=="https:" &&
@@ -917,7 +881,17 @@ function savePerformance(){
         p=>p.id===editingPerformanceId
       );
 
+
     if(index!==-1){
+
+      /*
+        編集前の待機状態を解除する。
+        編集後の販売時刻が未来なら、
+        カウントダウン側で改めて待機状態になる。
+      */
+      armedPerformances.delete(
+        editingPerformanceId
+      );
 
       performances[index]={
         ...performances[index],
@@ -931,9 +905,6 @@ function savePerformance(){
 
     performances.push(data);
 
-    /*
-      最初の1件は自動的に今回使用にする
-    */
 
     if(!appSettings.selectedPerformanceId){
 
@@ -962,13 +933,16 @@ function openPerformance(id){
   currentPerformanceId=id;
 
   const p=
-    performances.find(x=>x.id===id);
+    performances.find(
+      x=>x.id===id
+    );
 
   if(!p)return;
 
 
   document.getElementById("performanceDetailTitle")
-    .textContent=p.eventName || "公演詳細";
+    .textContent=
+      p.eventName || "公演詳細";
 
 
   document.getElementById(
@@ -986,25 +960,26 @@ function openPerformance(id){
 
   let saleText="未設定";
 
+
   if(p.saleDate){
 
     const d=new Date(p.saleDate);
 
     if(!Number.isNaN(d.getTime())){
-      saleText=d.toLocaleString("ja-JP");
+
+      saleText=
+        d.toLocaleString("ja-JP");
     }
   }
 
 
   const rows=[
-
     ["公演名",p.eventName],
     ["販売開始日時",saleText],
     ["ぴあ販売ページURL",p.ticketUrl],
     ["狙う公演日",p.targetDate],
     ["席種",p.seatType],
     ["枚数",p.ticketCount]
-
   ];
 
 
@@ -1120,6 +1095,9 @@ function deleteCurrentPerformance(){
   }
 
 
+  armedPerformances.delete(p.id);
+
+
   performances=
     performances.filter(
       x=>x.id!==p.id
@@ -1145,9 +1123,7 @@ function deleteCurrentPerformance(){
 }
 
 
-/* =========================
-   個人情報
-========================= */
+/* ---------- 個人情報 ---------- */
 
 function openPeople(){
 
@@ -1292,7 +1268,6 @@ function savePerson(){
   }else{
 
     data.id=makeId();
-
     people.push(data);
   }
 
@@ -1314,7 +1289,9 @@ function openPerson(id){
   currentPersonId=id;
 
   const p=
-    people.find(x=>x.id===id);
+    people.find(
+      x=>x.id===id
+    );
 
   if(!p)return;
 
@@ -1336,7 +1313,6 @@ function openPerson(id){
 
 
   const rows=[
-
     ["メールアドレス",p.email],
     ["メールアドレス（確認用）",p.emailConfirm],
     ["姓",p.last],
@@ -1344,7 +1320,6 @@ function openPerson(id){
     ["フリガナ セイ",p.kanaLast],
     ["フリガナ メイ",p.kanaFirst],
     ["電話番号",p.phone]
-
   ];
 
 
@@ -1367,13 +1342,11 @@ function openPerson(id){
 
           ${
             value
-
               ? `<button
                    class="copyBtn"
                    onclick="copyField(${i})">
                    📋 コピー
                  </button>`
-
               : ""
           }
 
@@ -1430,7 +1403,6 @@ async function copyField(index){
       document.createElement("textarea");
 
     textarea.value=value;
-
     textarea.style.position="fixed";
     textarea.style.opacity="0";
 
@@ -1495,7 +1467,8 @@ function editCurrentPerson(){
 
 
   document.getElementById("personFormTitle")
-    .textContent=p.label+"を編集";
+    .textContent=
+      p.label+"を編集";
 
 
   document.getElementById("personLabel").value=
@@ -1570,9 +1543,7 @@ function deleteCurrentPerson(){
 }
 
 
-/* =========================
-   ホーム
-========================= */
+/* ---------- ホーム ---------- */
 
 function updateHome(){
 
@@ -1611,7 +1582,6 @@ function updateHome(){
     openBtn.disabled=true;
 
     updateCountdown();
-
     return;
   }
 
@@ -1646,18 +1616,10 @@ function updateHome(){
   quick.innerHTML=`
 
     <b>今回の設定</b><br>
-
-    公演日：
-    ${esc(p.targetDate || "未設定")}<br>
-
-    席種：
-    ${esc(p.seatType || "未設定")}<br>
-
-    枚数：
-    ${esc(p.ticketCount || "未設定")}<br>
-
-    個人情報：
-    ${esc(person ? person.label : "未選択")}
+    公演日：${esc(p.targetDate || "未設定")}<br>
+    席種：${esc(p.seatType || "未設定")}<br>
+    枚数：${esc(p.ticketCount || "未設定")}<br>
+    個人情報：${esc(person ? person.label : "未選択")}
   `;
 
 
@@ -1667,9 +1629,7 @@ function updateHome(){
 }
 
 
-/* =========================
-   自動オープン
-========================= */
+/* ---------- 自動オープン ---------- */
 
 function getAutoKey(){
 
@@ -1719,6 +1679,7 @@ function markAutoOpened(){
 
   autoNavigationStarted=true;
 
+
   try{
 
     sessionStorage.setItem(
@@ -1742,6 +1703,15 @@ function autoOpenOnce(){
     !p.saleDate ||
     !p.ticketUrl
   ){
+    return;
+  }
+
+
+  /*
+    販売開始前から待機していなかった公演は
+    自動オープンしない。
+  */
+  if(!armedPerformances.has(p.id)){
     return;
   }
 
@@ -1775,13 +1745,16 @@ function autoOpenOnce(){
 
   markAutoOpened();
 
+  /*
+    1回開いたら待機状態も解除
+  */
+  armedPerformances.delete(p.id);
+
   window.location.href=url.href;
 }
 
 
-/* =========================
-   カウントダウン
-========================= */
+/* ---------- カウントダウン ---------- */
 
 function pad(n){
 
@@ -1802,7 +1775,6 @@ function updateCountdown(){
 
   const autoStatus=
     document.getElementById("autoStatus");
-
 
   const p=selectedPerformance();
 
@@ -1866,42 +1838,60 @@ function updateCountdown(){
     saleTime-Date.now();
 
 
-  if(diff<=0){
+  /*
+    まだ販売開始前なら、
+    このページで待機している公演として記録。
+  */
+  if(diff>0){
+
+    armedPerformances.add(p.id);
+
+    const hours=
+      Math.floor(diff/3600000);
+
+    diff%=3600000;
+
+    const minutes=
+      Math.floor(diff/60000);
+
+    diff%=60000;
+
+    const seconds=
+      Math.floor(diff/1000);
+
+    const milliseconds=
+      diff%1000;
+
 
     countdownEl.innerHTML=
-      '00:00:00<span class="ms">.000</span>';
+
+      `${pad(hours)}:`+
+      `${pad(minutes)}:`+
+      `${pad(seconds)}`+
+
+      `<span class="ms">.`+
+      `${String(milliseconds).padStart(3,"0")}`+
+      `</span>`;
+
 
     statusEl.textContent=
-      "販売開始済み";
+      "販売開始前です";
+
+    openBtn.textContent=
+      "今すぐぴあを開く";
 
 
     if(p.ticketUrl){
 
-      openBtn.textContent=
-        "もう一度ぴあを開く";
-
-
-      if(wasAutoOpened()){
-
-        autoStatus.textContent=
-          "自動オープン済みです。再アクセスは上のボタンを押してください。";
-
-      }else{
-
-        autoStatus.textContent=
-          "販売ページを開きます…";
-      }
-
-
-      autoOpenOnce();
+      autoStatus.innerHTML=
+        `<span class="autoReady">
+           ✓ 販売開始時に1回だけ販売ページを開きます
+         </span>`;
 
     }else{
 
-      openBtn.textContent=
-        "ぴあ販売ページ未設定";
-
       autoStatus.textContent=
-        "販売ページURLが設定されていません。";
+        "販売ページURLを設定してください。";
     }
 
 
@@ -1909,63 +1899,66 @@ function updateCountdown(){
   }
 
 
-  const hours=
-    Math.floor(diff/3600000);
-
-  diff%=3600000;
-
-
-  const minutes=
-    Math.floor(diff/60000);
-
-  diff%=60000;
-
-
-  const seconds=
-    Math.floor(diff/1000);
-
-
-  const milliseconds=
-    diff%1000;
-
+  /*
+    ここから販売開始後
+  */
 
   countdownEl.innerHTML=
-
-    `${pad(hours)}:`+
-    `${pad(minutes)}:`+
-    `${pad(seconds)}`+
-
-    `<span class="ms">.`+
-    `${String(milliseconds).padStart(3,"0")}`+
-    `</span>`;
-
+    '00:00:00<span class="ms">.000</span>';
 
   statusEl.textContent=
-    "販売開始前です";
+    "販売開始済み";
+
+
+  if(!p.ticketUrl){
+
+    openBtn.textContent=
+      "ぴあ販売ページ未設定";
+
+    autoStatus.textContent=
+      "販売ページURLが設定されていません。";
+
+    return;
+  }
 
 
   openBtn.textContent=
-    "今すぐぴあを開く";
+    "もう一度ぴあを開く";
 
 
-  if(p.ticketUrl){
+  if(wasAutoOpened()){
 
-    autoStatus.innerHTML=
-      `<span class="autoReady">
-         ✓ 販売開始時に1回だけ販売ページを開きます
-       </span>`;
+    autoStatus.textContent=
+      "自動オープン済みです。再アクセスは上のボタンを押してください。";
+
+    return;
+  }
+
+
+  /*
+    販売開始前から待機していた場合だけ
+    ここで1回自動オープン。
+  */
+  if(armedPerformances.has(p.id)){
+
+    autoStatus.textContent=
+      "販売ページを開きます…";
+
+    autoOpenOnce();
 
   }else{
 
+    /*
+      販売開始後にページを開いた場合。
+      勝手には開かない。
+    */
     autoStatus.textContent=
-      "販売ページURLを設定してください。";
+      "販売開始済みです。上のボタンから販売ページを開いてください。";
   }
 }
 
 
-/* =========================
-   手動で販売ページを開く
-========================= */
+/* ---------- 手動オープン ---------- */
 
 function openTicket(){
 
@@ -2010,13 +2003,10 @@ function openTicket(){
 }
 
 
-/* =========================
-   起動
-========================= */
+/* ---------- 起動 ---------- */
 
 loadAll();
 updateCountdown();
-
 
 setInterval(
   updateCountdown,
