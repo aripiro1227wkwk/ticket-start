@@ -9,27 +9,18 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:#f5f5f5;
-  color:#111;
+  margin:0;background:#f5f5f5;color:#111;
   font-family:"Meiryo UI","Meiryo",-apple-system,BlinkMacSystemFont,sans-serif;
 }
 button,input,select{font:inherit}
 button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 .app{
-  width:100%;
-  max-width:480px;
-  min-height:100vh;
-  margin:auto;
-  background:#fff;
-  padding-bottom:45px;
+  width:100%;max-width:480px;min-height:100vh;
+  margin:auto;background:#fff;padding-bottom:45px;
 }
-
 .header{
-  background:#d60000;
-  color:white;
-  text-align:center;
+  background:#d60000;color:#fff;text-align:center;
   padding:calc(18px + env(safe-area-inset-top)) 20px 18px;
 }
 .header h1{margin:0;font-size:25px}
@@ -37,280 +28,126 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 .page{display:none;padding:18px 16px 30px}
 .page.active{display:block}
-
-.page-title{
-  margin:2px 0 18px;
-  font-size:22px;
-}
+.page-title{margin:2px 0 18px;font-size:22px}
 
 .card{
-  background:white;
-  border:1px solid #e1e1e1;
-  border-radius:14px;
-  padding:16px;
-  margin-bottom:14px;
+  background:#fff;border:1px solid #e1e1e1;border-radius:14px;
+  padding:16px;margin-bottom:14px;
   box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
-
-.small{
-  font-size:12px;
-  color:#666;
-  line-height:1.7;
-}
-
+.small{font-size:12px;color:#666;line-height:1.7}
 .red{color:#d60000}
 
 .back{
-  border:0;
-  background:none;
-  color:#d60000;
-  font-weight:bold;
-  padding:2px 0 15px;
+  border:0;background:none;color:#d60000;
+  font-weight:bold;padding:2px 0 15px;
 }
-
 .primary{
-  width:100%;
-  min-height:52px;
-  border:0;
-  border-radius:10px;
-  background:#d60000;
-  color:white;
-  font-weight:bold;
-  font-size:16px;
-}
-
-.secondary{
-  width:100%;
-  min-height:50px;
-  border:1px solid #ccc;
-  border-radius:10px;
-  background:white;
-  font-weight:bold;
-  margin-top:10px;
+  width:100%;min-height:52px;border:0;border-radius:10px;
+  background:#d60000;color:#fff;font-weight:bold;font-size:16px;
 }
 
 /* HOME */
 
-.event{
-  text-align:center;
-  font-weight:bold;
-}
-
-.sale{
-  text-align:center;
-  color:#666;
-  font-size:13px;
-  margin-top:6px;
-}
-
-.count-label{
-  text-align:center;
-  margin-top:25px;
-  font-weight:bold;
-}
+.event{text-align:center;font-weight:bold}
+.sale{text-align:center;color:#666;font-size:13px;margin-top:6px}
+.count-label{text-align:center;margin-top:25px;font-weight:bold}
 
 .countdown{
   text-align:center;
   font-size:clamp(30px,10vw,45px);
-  font-weight:800;
-  margin:12px 0;
+  font-weight:800;margin:12px 0;
   font-variant-numeric:tabular-nums;
 }
-
 .ms{font-size:18px}
 
 .status{
-  text-align:center;
-  color:#777;
-  font-size:12px;
-  margin-bottom:18px;
+  text-align:center;color:#777;
+  font-size:12px;margin-bottom:18px;
 }
 
 .open{
-  width:100%;
-  min-height:60px;
-  border:0;
-  border-radius:12px;
-  background:#d60000;
-  color:white;
-  font-size:18px;
-  font-weight:bold;
+  width:100%;min-height:60px;border:0;border-radius:12px;
+  background:#d60000;color:#fff;font-size:18px;font-weight:bold;
 }
+.open:disabled{background:#aaa;cursor:default}
 
-.open:disabled{
-  background:#aaa;
-  cursor:default;
+.autoBox{
+  margin-top:12px;padding:11px 12px;border-radius:9px;
+  background:#f7f7f7;font-size:12px;line-height:1.6;text-align:center;
 }
+.autoReady{color:#b40000;font-weight:bold}
 
 .quick{
-  margin-top:14px;
-  padding:13px;
-  background:#fff5f5;
-  border-left:4px solid #d60000;
-  border-radius:8px;
-  font-size:13px;
-  line-height:1.8;
+  margin-top:14px;padding:13px;background:#fff5f5;
+  border-left:4px solid #d60000;border-radius:8px;
+  font-size:13px;line-height:1.8;
 }
 
 .menu{margin-top:22px}
-
-.menuBtn,
-.person{
-  width:100%;
-  min-height:58px;
-  margin-bottom:10px;
-  padding:0 15px;
-  background:white;
-  border:1px solid #ddd;
-  border-radius:11px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-weight:bold;
-  text-align:left;
+.menuBtn,.person{
+  width:100%;min-height:58px;margin-bottom:10px;padding:0 15px;
+  background:#fff;border:1px solid #ddd;border-radius:11px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-weight:bold;text-align:left;
 }
 
 .add{
-  width:100%;
-  min-height:52px;
-  border:2px dashed #d60000;
-  border-radius:11px;
-  background:white;
-  color:#d60000;
-  font-weight:bold;
+  width:100%;min-height:52px;border:2px dashed #d60000;
+  border-radius:11px;background:#fff;color:#d60000;font-weight:bold;
 }
 
 /* FORM */
 
 .group{margin-bottom:16px}
-
 .group label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:7px;
+  display:block;font-size:13px;font-weight:bold;margin-bottom:7px;
+}
+.group input,.group select{
+  width:100%;min-height:48px;padding:10px 12px;
+  border:1px solid #ccc;border-radius:9px;background:#fff;font-size:16px;
 }
 
-.group input,
-.group select{
-  width:100%;
-  min-height:48px;
-  padding:10px 12px;
-  border:1px solid #ccc;
-  border-radius:9px;
-  background:white;
-  font-size:16px;
-}
+/* PERSON */
 
-/* PERSON DETAIL */
-
-.detailRow{
-  padding:13px 0;
-  border-bottom:1px solid #eee;
-}
-
-.detailRow:last-child{
-  border-bottom:0;
-}
-
-.detailLabel{
-  color:#777;
-  font-size:11px;
-  margin-bottom:6px;
-}
-
-.detailLine{
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-
-.detailValue{
-  flex:1;
-  font-size:15px;
-  word-break:break-all;
-}
+.detailRow{padding:13px 0;border-bottom:1px solid #eee}
+.detailRow:last-child{border-bottom:0}
+.detailLabel{color:#777;font-size:11px;margin-bottom:6px}
+.detailLine{display:flex;gap:8px;align-items:center}
+.detailValue{flex:1;font-size:15px;word-break:break-all}
 
 .copyBtn{
-  flex:none;
-  border:1px solid #d60000;
-  background:white;
-  color:#d60000;
-  border-radius:8px;
-  padding:8px 10px;
-  font-size:12px;
-  font-weight:bold;
+  flex:none;border:1px solid #d60000;background:#fff;color:#d60000;
+  border-radius:8px;padding:8px 10px;font-size:12px;font-weight:bold;
 }
 
 .selectedBox{
-  background:#fff3f3;
-  border:1px solid #f2bcbc;
-  color:#b40000;
-  border-radius:9px;
-  padding:11px;
-  margin-bottom:14px;
-  font-size:13px;
-  font-weight:bold;
-  text-align:center;
+  background:#fff3f3;border:1px solid #f2bcbc;color:#b40000;
+  border-radius:9px;padding:11px;margin-bottom:14px;
+  font-size:13px;font-weight:bold;text-align:center;
 }
 
 .actionGrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:10px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:10px;
 }
-
-.editBtn{
-  min-height:48px;
-  border:1px solid #111;
-  border-radius:9px;
-  background:white;
-  font-weight:bold;
+.editBtn,.deleteBtn{
+  min-height:48px;border-radius:9px;background:#fff;font-weight:bold;
 }
-
-.deleteBtn{
-  min-height:48px;
-  border:1px solid #bbb;
-  border-radius:9px;
-  background:#f5f5f5;
-  color:#555;
-  font-weight:bold;
-}
+.editBtn{border:1px solid #111}
+.deleteBtn{border:1px solid #bbb;background:#f5f5f5;color:#555}
 
 /* STEPS */
 
-.step{
-  display:flex;
-  align-items:center;
-  margin-bottom:12px;
-}
-
+.step{display:flex;align-items:center;margin-bottom:12px}
 .num{
-  width:35px;
-  height:35px;
-  min-width:35px;
-  border-radius:50%;
-  background:#d60000;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  margin-right:12px;
+  width:35px;height:35px;min-width:35px;border-radius:50%;
+  background:#d60000;color:#fff;display:flex;
+  align-items:center;justify-content:center;font-weight:bold;margin-right:12px;
 }
+.stepText{font-weight:bold;font-size:14px}
 
-.stepText{
-  font-weight:bold;
-  font-size:14px;
-}
-
-.footer{
-  text-align:center;
-  color:#aaa;
-  font-size:11px;
-  padding:20px;
-}
+.footer{text-align:center;color:#aaa;font-size:11px;padding:20px}
 </style>
 </head>
 
@@ -323,24 +160,14 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
   <p>先着チケット購入サポート</p>
 </header>
 
-
 <!-- HOME -->
-
 <main id="homePage" class="page active">
 
   <div class="card">
+    <div id="homeEvent" class="event">公演未設定</div>
+    <div id="homeSale" class="sale">販売日時を設定してください</div>
 
-    <div id="homeEvent" class="event">
-      公演未設定
-    </div>
-
-    <div id="homeSale" class="sale">
-      販売日時を設定してください
-    </div>
-
-    <div class="count-label">
-      販売開始まで
-    </div>
+    <div class="count-label">販売開始まで</div>
 
     <div id="countdown" class="countdown">
       --:--:--<span class="ms">.---</span>
@@ -350,214 +177,113 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
       販売設定をするとカウントダウンが始まります
     </div>
 
-    <button
-      id="openBtn"
-      class="open"
-      onclick="openTicket()"
-      disabled>
+    <button id="openBtn" class="open" onclick="openTicket()" disabled>
       今すぐぴあを開く
     </button>
 
+    <div id="autoStatus" class="autoBox">
+      販売日時とURLを設定すると、自動オープンの準備ができます。
+    </div>
+
     <div id="quick" class="quick"></div>
-
   </div>
-
 
   <div class="menu">
 
-    <button
-      class="menuBtn"
-      onclick="show('settingsPage')">
-
-      <span>⚙ 販売設定</span>
-      <span>›</span>
-
+    <button class="menuBtn" onclick="show('settingsPage')">
+      <span>⚙ 販売設定</span><span>›</span>
     </button>
 
-
-    <button
-      class="menuBtn"
-      onclick="openPeople()">
-
-      <span>👤 入力準備メモ</span>
-      <span>›</span>
-
+    <button class="menuBtn" onclick="openPeople()">
+      <span>👤 入力準備メモ</span><span>›</span>
     </button>
 
-
-    <button
-      class="menuBtn"
-      onclick="show('stepsPage')">
-
-      <span>✓ 購入手順</span>
-      <span>›</span>
-
+    <button class="menuBtn" onclick="show('stepsPage')">
+      <span>✓ 購入手順</span><span>›</span>
     </button>
 
-
-    <button
-      class="menuBtn"
-      onclick="show('helpPage')">
-
-      <span>？ 使い方</span>
-      <span>›</span>
-
+    <button class="menuBtn" onclick="show('helpPage')">
+      <span>？ 使い方</span><span>›</span>
     </button>
 
   </div>
-
 </main>
 
-
 <!-- SETTINGS -->
-
 <main id="settingsPage" class="page">
 
-  <button
-    class="back"
-    onclick="show('homePage')">
+  <button class="back" onclick="show('homePage')">
     ← ホームに戻る
   </button>
 
-  <h2 class="page-title">
-    販売設定
-  </h2>
-
+  <h2 class="page-title">販売設定</h2>
 
   <div class="card">
 
     <div class="group">
-
-      <label>
-        公演名
-      </label>
-
-      <input
-        id="eventName"
-        placeholder="例：○○ LIVE 2026">
-
+      <label>公演名</label>
+      <input id="eventName" placeholder="例：○○ LIVE 2026">
     </div>
 
-
     <div class="group">
-
-      <label>
-        販売開始日時
-      </label>
-
-      <input
-        id="saleDate"
-        type="datetime-local"
-        step="1">
-
+      <label>販売開始日時</label>
+      <input id="saleDate" type="datetime-local" step="1">
     </div>
 
-
     <div class="group">
-
-      <label>
-        ぴあ販売ページURL
-      </label>
-
-      <input
-        id="ticketUrl"
-        type="url"
-        placeholder="https://ticket.pia.jp/...">
-
+      <label>ぴあ販売ページURL</label>
+      <input id="ticketUrl" type="url" placeholder="https://ticket.pia.jp/...">
     </div>
 
-
     <div class="group">
-
-      <label>
-        狙う公演日
-      </label>
-
-      <input
-        id="targetDate"
-        placeholder="例：10月10日 18:00">
-
+      <label>狙う公演日</label>
+      <input id="targetDate" placeholder="例：10月10日 18:00">
     </div>
 
-
     <div class="group">
-
-      <label>
-        席種
-      </label>
-
-      <input
-        id="seatType"
-        placeholder="例：全席指定">
-
+      <label>席種</label>
+      <input id="seatType" placeholder="例：全席指定">
     </div>
 
-
     <div class="group">
-
-      <label>
-        枚数
-      </label>
+      <label>枚数</label>
 
       <select id="ticketCount">
-
-        <option value="">
-          選択してください
-        </option>
-
+        <option value="">選択してください</option>
         <option>1枚</option>
         <option>2枚</option>
         <option>3枚</option>
         <option>4枚</option>
-
       </select>
-
     </div>
 
-
-    <button
-      class="primary"
-      onclick="saveSettings()">
+    <button class="primary" onclick="saveSettings()">
       設定を保存
     </button>
 
   </div>
-
 </main>
 
-
-<!-- PEOPLE LIST -->
-
+<!-- PEOPLE -->
 <main id="peoplePage" class="page">
 
-  <button
-    class="back"
-    onclick="show('homePage')">
+  <button class="back" onclick="show('homePage')">
     ← ホームに戻る
   </button>
 
-  <h2 class="page-title">
-    入力準備メモ
-  </h2>
-
+  <h2 class="page-title">入力準備メモ</h2>
 
   <div class="card">
-
     <p class="small">
       登録した人をタップすると詳細を確認できます。
     </p>
 
     <div id="peopleList"></div>
 
-
-    <button
-      class="add"
-      onclick="newPerson()">
+    <button class="add" onclick="newPerson()">
       ＋ 新しい人を追加
     </button>
-
   </div>
-
 
   <p class="small">
     ※登録内容はこのブラウザ内に保存されます。<br>
@@ -567,306 +293,157 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 </main>
 
-
 <!-- PERSON FORM -->
-
 <main id="personFormPage" class="page">
 
-  <button
-    class="back"
-    onclick="openPeople()">
+  <button class="back" onclick="openPeople()">
     ← 一覧に戻る
   </button>
 
-  <h2
-    id="personFormTitle"
-    class="page-title">
+  <h2 id="personFormTitle" class="page-title">
     新しい人を追加
   </h2>
-
 
   <div class="card">
 
     <div class="group">
-
-      <label>
-        表示名
-      </label>
-
-      <input
-        id="personLabel"
-        placeholder="例：友達A">
-
+      <label>表示名</label>
+      <input id="personLabel" placeholder="例：友達A">
     </div>
-
 
     <div class="group">
-
-      <label>
-        メールアドレス
-      </label>
-
-      <input
-        id="personEmail"
-        type="email"
-        autocomplete="off">
-
+      <label>メールアドレス</label>
+      <input id="personEmail" type="email" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        メールアドレス（確認用）
-      </label>
-
-      <input
-        id="personEmailConfirm"
-        type="email"
-        autocomplete="off">
-
+      <label>メールアドレス（確認用）</label>
+      <input id="personEmailConfirm" type="email" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        姓（全角）
-      </label>
-
-      <input
-        id="personLast"
-        autocomplete="off">
-
+      <label>姓（全角）</label>
+      <input id="personLast" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        名（全角）
-      </label>
-
-      <input
-        id="personFirst"
-        autocomplete="off">
-
+      <label>名（全角）</label>
+      <input id="personFirst" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        フリガナ セイ（全角）
-      </label>
-
-      <input
-        id="personKanaLast"
-        autocomplete="off">
-
+      <label>フリガナ セイ（全角）</label>
+      <input id="personKanaLast" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        フリガナ メイ（全角）
-      </label>
-
-      <input
-        id="personKanaFirst"
-        autocomplete="off">
-
+      <label>フリガナ メイ（全角）</label>
+      <input id="personKanaFirst" autocomplete="off">
     </div>
-
 
     <div class="group">
-
-      <label>
-        電話番号
-      </label>
-
-      <input
-        id="personPhone"
-        type="tel"
-        inputmode="numeric"
-        autocomplete="off">
-
+      <label>電話番号</label>
+      <input id="personPhone" type="tel" inputmode="numeric" autocomplete="off">
     </div>
 
-
-    <button
-      class="primary"
-      onclick="savePerson()">
+    <button class="primary" onclick="savePerson()">
       保存する
     </button>
 
   </div>
-
 </main>
 
-
 <!-- PERSON DETAIL -->
-
 <main id="personDetailPage" class="page">
 
-  <button
-    class="back"
-    onclick="openPeople()">
+  <button class="back" onclick="openPeople()">
     ← 一覧に戻る
   </button>
 
-  <h2
-    id="detailTitle"
-    class="page-title">
-    入力情報
-  </h2>
-
+  <h2 id="detailTitle" class="page-title">入力情報</h2>
 
   <div id="selectedNotice"></div>
+  <div id="personDetail" class="card"></div>
 
-  <div
-    id="personDetail"
-    class="card">
-  </div>
-
-
-  <button
-    class="primary"
-    onclick="selectCurrentPerson()">
+  <button class="primary" onclick="selectCurrentPerson()">
     この人を今回使用
   </button>
 
-
   <div class="actionGrid">
-
-    <button
-      class="editBtn"
-      onclick="editCurrentPerson()">
-      編集
-    </button>
-
-    <button
-      class="deleteBtn"
-      onclick="deleteCurrentPerson()">
-      削除
-    </button>
-
+    <button class="editBtn" onclick="editCurrentPerson()">編集</button>
+    <button class="deleteBtn" onclick="deleteCurrentPerson()">削除</button>
   </div>
 
 </main>
 
-
 <!-- STEPS -->
-
 <main id="stepsPage" class="page">
 
-  <button
-    class="back"
-    onclick="show('homePage')">
+  <button class="back" onclick="show('homePage')">
     ← ホームに戻る
   </button>
 
-  <h2 class="page-title">
-    購入手順
-  </h2>
-
+  <h2 class="page-title">購入手順</h2>
 
   <div class="card">
 
     <div class="step">
       <div class="num">1</div>
-      <div class="stepText">
-        注意事項に同意
-      </div>
+      <div class="stepText">注意事項に同意</div>
     </div>
 
     <div class="step">
       <div class="num">2</div>
-      <div class="stepText">
-        日にちを選択
-      </div>
+      <div class="stepText">日にちを選択</div>
     </div>
 
     <div class="step">
       <div class="num">3</div>
-      <div class="stepText">
-        席種を選択
-      </div>
+      <div class="stepText">席種を選択</div>
     </div>
 
     <div class="step">
       <div class="num">4</div>
-      <div class="stepText">
-        枚数を選択
-      </div>
+      <div class="stepText">枚数を選択</div>
     </div>
 
     <div class="step">
       <div class="num">5</div>
-      <div class="stepText">
-        内容を確認して同意
-      </div>
+      <div class="stepText">内容を確認して同意</div>
     </div>
 
     <div class="step">
       <div class="num">6</div>
-      <div class="stepText">
-        購入者情報を入力
-      </div>
+      <div class="stepText">購入者情報を入力</div>
     </div>
 
   </div>
-
 </main>
 
-
 <!-- HELP -->
-
 <main id="helpPage" class="page">
 
-  <button
-    class="back"
-    onclick="show('homePage')">
+  <button class="back" onclick="show('homePage')">
     ← ホームに戻る
   </button>
 
-  <h2 class="page-title">
-    使い方
-  </h2>
-
+  <h2 class="page-title">使い方</h2>
 
   <div class="card small">
-
-    <p>
-      ① 販売設定で公演情報を保存します。
-    </p>
-
-    <p>
-      ② 入力準備メモに必要な情報を登録します。
-    </p>
-
-    <p>
-      ③ 今回使用する人を選択します。
-    </p>
-
-    <p>
-      ④ 販売開始前にホーム画面を開いて待機します。
-    </p>
-
-    <p>
-      ⑤ 販売ページが開けなかった場合はブラウザで戻り、
-      「もう一度ぴあを開く」を押します。
-    </p>
+    <p>① 販売設定で公演情報と販売ページを保存します。</p>
+    <p>② 入力準備メモに必要な情報を登録します。</p>
+    <p>③ 今回使用する人を選択します。</p>
+    <p>④ 販売開始前にホーム画面を開き、画面をONにしたまま待機します。</p>
+    <p>⑤ 販売開始時刻になると、設定した販売ページを1回だけ開きます。</p>
+    <p>⑥ 開けなかった場合はブラウザで戻り、「もう一度ぴあを開く」を押します。</p>
 
     <p class="red">
-      ※購入操作そのものを自動化するサイトではありません。
+      ※ブラウザや通信状況によって移動時刻には誤差が出る場合があります。<br>
+      ※ページの連続更新や購入操作を自動化する機能ではありません。
     </p>
-
   </div>
 
 </main>
-
 
 <footer class="footer">
   個人用 Ticket START
@@ -874,15 +451,12 @@ button{-webkit-tap-highlight-color:transparent;cursor:pointer}
 
 </div>
 
-
 <script>
-
 const SETTINGS_KEY="ticketStartSettings";
 const PEOPLE_KEY="ticketStartPeople";
-
+const AUTO_PREFIX="ticketStartAutoOpened:";
 
 let settings={
-
   eventName:"",
   saleDate:"",
   ticketUrl:"",
@@ -890,88 +464,56 @@ let settings={
   seatType:"",
   ticketCount:"",
   selectedPersonId:""
-
 };
 
-
 let people=[];
-
 let currentPersonId=null;
-
 let editingPersonId=null;
+let autoNavigationStarted=false;
 
 
-
-/* PAGE */
+/* ---------- 共通 ---------- */
 
 function show(id){
-
-  document
-    .querySelectorAll(".page")
+  document.querySelectorAll(".page")
     .forEach(p=>p.classList.remove("active"));
 
-  document
-    .getElementById(id)
+  document.getElementById(id)
     .classList.add("active");
 
   window.scrollTo(0,0);
-
 }
 
-
-
 function esc(v){
-
   return String(v ?? "")
-
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
-
 }
 
 
-
-/* LOAD */
+/* ---------- 読み込み ---------- */
 
 function loadAll(){
-
   try{
-
     const savedSettings=
-      JSON.parse(
-        localStorage.getItem(SETTINGS_KEY)
-      );
+      JSON.parse(localStorage.getItem(SETTINGS_KEY));
 
     if(savedSettings){
-
-      settings={
-        ...settings,
-        ...savedSettings
-      };
-
+      settings={...settings,...savedSettings};
     }
-
   }catch(e){}
-
 
   try{
-
     const savedPeople=
-      JSON.parse(
-        localStorage.getItem(PEOPLE_KEY)
-      );
+      JSON.parse(localStorage.getItem(PEOPLE_KEY));
 
     if(Array.isArray(savedPeople)){
-
       people=savedPeople;
-
     }
-
   }catch(e){}
-
 
   document.getElementById("eventName").value=
     settings.eventName || "";
@@ -991,16 +533,15 @@ function loadAll(){
   document.getElementById("ticketCount").value=
     settings.ticketCount || "";
 
-
   updateHome();
-
 }
 
 
-
-/* SETTINGS */
+/* ---------- 販売設定 ---------- */
 
 function saveSettings(){
+  const oldSaleDate=settings.saleDate;
+  const oldTicketUrl=settings.ticketUrl;
 
   settings.eventName=
     document.getElementById("eventName").value.trim();
@@ -1020,174 +561,108 @@ function saveSettings(){
   settings.ticketCount=
     document.getElementById("ticketCount").value;
 
+  /*
+    販売日時またはURLを変更した場合は、
+    新しい販売設定として自動オープン判定をやり直す。
+  */
+  if(
+    oldSaleDate!==settings.saleDate ||
+    oldTicketUrl!==settings.ticketUrl
+  ){
+    autoNavigationStarted=false;
+  }
 
   localStorage.setItem(
     SETTINGS_KEY,
     JSON.stringify(settings)
   );
 
-
   updateHome();
 
   alert("保存しました");
 
   show("homePage");
-
 }
 
-
-
 function updateHome(){
-
-  const homeEvent=
-    document.getElementById("homeEvent");
-
-  const homeSale=
-    document.getElementById("homeSale");
-
-  const quick=
-    document.getElementById("quick");
-
-  const openBtn=
-    document.getElementById("openBtn");
-
+  const homeEvent=document.getElementById("homeEvent");
+  const homeSale=document.getElementById("homeSale");
+  const quick=document.getElementById("quick");
+  const openBtn=document.getElementById("openBtn");
 
   homeEvent.textContent=
     settings.eventName || "公演未設定";
 
-
   if(settings.saleDate){
-
-    const sale=
-      new Date(settings.saleDate);
+    const sale=new Date(settings.saleDate);
 
     homeSale.textContent=
       "販売開始："+sale.toLocaleString("ja-JP");
-
   }else{
-
     homeSale.textContent=
       "販売日時を設定してください";
-
   }
-
 
   const selected=
-    people.find(
-      p=>p.id===settings.selectedPersonId
-    );
-
+    people.find(p=>p.id===settings.selectedPersonId);
 
   quick.innerHTML=`
-
     <b>今回の設定</b><br>
-
-    公演日：
-    ${esc(settings.targetDate || "未設定")}
-    <br>
-
-    席種：
-    ${esc(settings.seatType || "未設定")}
-    <br>
-
-    枚数：
-    ${esc(settings.ticketCount || "未設定")}
-    <br>
-
-    入力情報：
-    ${esc(selected ? selected.label : "未選択")}
-
+    公演日：${esc(settings.targetDate || "未設定")}<br>
+    席種：${esc(settings.seatType || "未設定")}<br>
+    枚数：${esc(settings.ticketCount || "未設定")}<br>
+    入力情報：${esc(selected ? selected.label : "未選択")}
   `;
 
-
-  openBtn.disabled=
-    !settings.ticketUrl;
-
+  openBtn.disabled=!settings.ticketUrl;
 
   updateCountdown();
-
 }
 
 
-
-/* PEOPLE */
+/* ---------- 入力準備メモ ---------- */
 
 function openPeople(){
-
   renderPeople();
-
   show("peoplePage");
-
 }
-
-
 
 function renderPeople(){
-
-  const list=
-    document.getElementById("peopleList");
-
+  const list=document.getElementById("peopleList");
 
   if(!people.length){
-
     list.innerHTML=
-      `<p class="small">
-        まだ登録されていません。
-      </p>`;
-
+      `<p class="small">まだ登録されていません。</p>`;
     return;
-
   }
 
+  list.innerHTML=people.map(p=>{
+    const selected=
+      p.id===settings.selectedPersonId;
 
-  list.innerHTML=
-    people.map(p=>{
-
-      const selected=
-        p.id===settings.selectedPersonId;
-
-      return `
-
-        <button
-          class="person"
-          onclick="openPerson('${p.id}')">
-
-          <span>
-            👤 ${esc(p.label)}
-            ${selected ? "　✓" : ""}
-          </span>
-
-          <span>›</span>
-
-        </button>
-
-      `;
-
-    }).join("");
-
+    return `
+      <button class="person" onclick="openPerson('${p.id}')">
+        <span>
+          👤 ${esc(p.label)}
+          ${selected ? "　✓" : ""}
+        </span>
+        <span>›</span>
+      </button>
+    `;
+  }).join("");
 }
-
-
 
 function newPerson(){
-
   editingPersonId=null;
 
-  document.getElementById(
-    "personFormTitle"
-  ).textContent=
-    "新しい人を追加";
+  document.getElementById("personFormTitle")
+    .textContent="新しい人を追加";
 
   clearPersonForm();
-
   show("personFormPage");
-
 }
 
-
-
 function clearPersonForm(){
-
   document.getElementById("personLabel").value="";
   document.getElementById("personEmail").value="";
   document.getElementById("personEmailConfirm").value="";
@@ -1196,233 +671,131 @@ function clearPersonForm(){
   document.getElementById("personKanaLast").value="";
   document.getElementById("personKanaFirst").value="";
   document.getElementById("personPhone").value="";
-
 }
 
-
-
 function savePerson(){
-
   const data={
-
-    label:
-      document.getElementById("personLabel").value.trim(),
-
-    email:
-      document.getElementById("personEmail").value.trim(),
-
-    emailConfirm:
-      document.getElementById("personEmailConfirm").value.trim(),
-
-    last:
-      document.getElementById("personLast").value.trim(),
-
-    first:
-      document.getElementById("personFirst").value.trim(),
-
-    kanaLast:
-      document.getElementById("personKanaLast").value.trim(),
-
-    kanaFirst:
-      document.getElementById("personKanaFirst").value.trim(),
-
-    phone:
-      document.getElementById("personPhone").value.trim()
-
+    label:document.getElementById("personLabel").value.trim(),
+    email:document.getElementById("personEmail").value.trim(),
+    emailConfirm:document.getElementById("personEmailConfirm").value.trim(),
+    last:document.getElementById("personLast").value.trim(),
+    first:document.getElementById("personFirst").value.trim(),
+    kanaLast:document.getElementById("personKanaLast").value.trim(),
+    kanaFirst:document.getElementById("personKanaFirst").value.trim(),
+    phone:document.getElementById("personPhone").value.trim()
   };
 
-
   if(!data.label){
-
-    alert(
-      "表示名を入力してください"
-    );
-
+    alert("表示名を入力してください");
     return;
-
   }
-
 
   if(
     data.email &&
     data.emailConfirm &&
     data.email!==data.emailConfirm
   ){
-
-    alert(
-      "メールアドレスが一致していません"
-    );
-
+    alert("メールアドレスが一致していません");
     return;
-
   }
 
-
   if(editingPersonId){
-
     const index=
-      people.findIndex(
-        p=>p.id===editingPersonId
-      );
-
+      people.findIndex(p=>p.id===editingPersonId);
 
     if(index!==-1){
-
       people[index]={
         ...people[index],
         ...data
       };
-
     }
-
   }else{
-
     data.id=
-      crypto.randomUUID
+      (window.crypto && crypto.randomUUID)
       ? crypto.randomUUID()
-      : Date.now().toString();
-
+      : Date.now().toString()+"-"+Math.random().toString(16).slice(2);
 
     people.push(data);
-
   }
-
 
   localStorage.setItem(
     PEOPLE_KEY,
     JSON.stringify(people)
   );
 
-
   editingPersonId=null;
 
-
-  alert(
-    "保存しました"
-  );
-
-
   updateHome();
-
+  alert("保存しました");
   openPeople();
-
 }
 
-
-
 function openPerson(id){
-
   currentPersonId=id;
 
-
   const p=
-    people.find(
-      x=>x.id===id
-    );
-
+    people.find(x=>x.id===id);
 
   if(!p)return;
 
+  document.getElementById("detailTitle")
+    .textContent=p.label;
 
-  document.getElementById(
-    "detailTitle"
-  ).textContent=
-    p.label;
-
-
-  const notice=
-    document.getElementById(
-      "selectedNotice"
-    );
-
-
-  notice.innerHTML=
+  document.getElementById("selectedNotice").innerHTML=
     id===settings.selectedPersonId
-
     ? `<div class="selectedBox">
          ✓ 今回使用する情報に選択されています
        </div>`
-
     : "";
 
-
   const rows=[
-
     ["メールアドレス",p.email],
-
     ["メールアドレス（確認用）",p.emailConfirm],
-
     ["姓",p.last],
-
     ["名",p.first],
-
     ["フリガナ セイ",p.kanaLast],
-
     ["フリガナ メイ",p.kanaFirst],
-
     ["電話番号",p.phone]
-
   ];
 
+  document.getElementById("personDetail").innerHTML=
+    rows.map(([label,value],i)=>`
+      <div class="detailRow">
 
-  document.getElementById(
-    "personDetail"
-  ).innerHTML=
-
-    rows.map(
-      ([label,value],i)=>`
-
-        <div class="detailRow">
-
-          <div class="detailLabel">
-            ${esc(label)}
-          </div>
-
-          <div class="detailLine">
-
-            <div class="detailValue">
-              ${esc(value || "未入力")}
-            </div>
-
-            ${
-              value
-              ? `<button
-                   class="copyBtn"
-                   onclick="copyField(${i})">
-                   📋 コピー
-                 </button>`
-              : ""
-            }
-
-          </div>
-
+        <div class="detailLabel">
+          ${esc(label)}
         </div>
 
-      `
-    ).join("");
+        <div class="detailLine">
 
+          <div class="detailValue">
+            ${esc(value || "未入力")}
+          </div>
 
-  show(
-    "personDetailPage"
-  );
+          ${
+            value
+            ? `<button
+                 class="copyBtn"
+                 onclick="copyField(${i})">
+                 📋 コピー
+               </button>`
+            : ""
+          }
 
+        </div>
+      </div>
+    `).join("");
+
+  show("personDetailPage");
 }
 
-
-
 function currentRows(){
-
   const p=
-    people.find(
-      x=>x.id===currentPersonId
-    );
-
+    people.find(x=>x.id===currentPersonId);
 
   if(!p)return [];
 
-
   return [
-
     p.email,
     p.emailConfirm,
     p.last,
@@ -1430,266 +803,218 @@ function currentRows(){
     p.kanaLast,
     p.kanaFirst,
     p.phone
-
   ];
-
 }
 
-
-
 async function copyField(index){
-
-  const value=
-    currentRows()[index];
-
+  const value=currentRows()[index];
 
   if(!value)return;
 
-
   try{
-
-    await navigator.clipboard.writeText(
-      value
-    );
-
-    alert(
-      "コピーしました"
-    );
-
+    await navigator.clipboard.writeText(value);
+    alert("コピーしました");
   }catch(e){
-
-    /* Safari等でClipboard APIが使えない場合 */
-
     const textarea=
       document.createElement("textarea");
 
     textarea.value=value;
-
     textarea.style.position="fixed";
     textarea.style.opacity="0";
 
-    document.body.appendChild(
-      textarea
-    );
+    document.body.appendChild(textarea);
 
     textarea.focus();
     textarea.select();
 
-
     try{
-
-      document.execCommand(
-        "copy"
-      );
-
-      alert(
-        "コピーしました"
-      );
-
+      document.execCommand("copy");
+      alert("コピーしました");
     }catch(err){
-
-      alert(
-        "コピーできませんでした"
-      );
-
+      alert("コピーできませんでした");
     }
 
-
     textarea.remove();
-
   }
-
 }
 
-
-
 function selectCurrentPerson(){
-
   const p=
-    people.find(
-      x=>x.id===currentPersonId
-    );
-
+    people.find(x=>x.id===currentPersonId);
 
   if(!p)return;
 
-
-  settings.selectedPersonId=
-    p.id;
-
+  settings.selectedPersonId=p.id;
 
   localStorage.setItem(
     SETTINGS_KEY,
     JSON.stringify(settings)
   );
 
-
   updateHome();
-
-  openPerson(
-    p.id
-  );
-
+  openPerson(p.id);
 
   alert(
     p.label+
     " を今回使用する情報に設定しました"
   );
-
 }
-
-
 
 function editCurrentPerson(){
-
   const p=
-    people.find(
-      x=>x.id===currentPersonId
-    );
-
+    people.find(x=>x.id===currentPersonId);
 
   if(!p)return;
 
+  editingPersonId=p.id;
 
-  editingPersonId=
-    p.id;
+  document.getElementById("personFormTitle")
+    .textContent=p.label+"を編集";
 
+  document.getElementById("personLabel").value=p.label || "";
+  document.getElementById("personEmail").value=p.email || "";
+  document.getElementById("personEmailConfirm").value=p.emailConfirm || "";
+  document.getElementById("personLast").value=p.last || "";
+  document.getElementById("personFirst").value=p.first || "";
+  document.getElementById("personKanaLast").value=p.kanaLast || "";
+  document.getElementById("personKanaFirst").value=p.kanaFirst || "";
+  document.getElementById("personPhone").value=p.phone || "";
 
-  document.getElementById(
-    "personFormTitle"
-  ).textContent=
-    p.label+"を編集";
-
-
-  document.getElementById("personLabel").value=
-    p.label || "";
-
-  document.getElementById("personEmail").value=
-    p.email || "";
-
-  document.getElementById("personEmailConfirm").value=
-    p.emailConfirm || "";
-
-  document.getElementById("personLast").value=
-    p.last || "";
-
-  document.getElementById("personFirst").value=
-    p.first || "";
-
-  document.getElementById("personKanaLast").value=
-    p.kanaLast || "";
-
-  document.getElementById("personKanaFirst").value=
-    p.kanaFirst || "";
-
-  document.getElementById("personPhone").value=
-    p.phone || "";
-
-
-  show(
-    "personFormPage"
-  );
-
+  show("personFormPage");
 }
 
-
-
 function deleteCurrentPerson(){
-
   const p=
-    people.find(
-      x=>x.id===currentPersonId
-    );
-
+    people.find(x=>x.id===currentPersonId);
 
   if(!p)return;
 
-
-  if(
-    !confirm(
-      p.label+
-      " を削除しますか？"
-    )
-  ){
-
+  if(!confirm(p.label+" を削除しますか？")){
     return;
-
   }
 
-
   people=
-    people.filter(
-      x=>x.id!==p.id
-    );
+    people.filter(x=>x.id!==p.id);
 
-
-  if(
-    settings.selectedPersonId===p.id
-  ){
-
+  if(settings.selectedPersonId===p.id){
     settings.selectedPersonId="";
-
 
     localStorage.setItem(
       SETTINGS_KEY,
       JSON.stringify(settings)
     );
-
   }
-
 
   localStorage.setItem(
     PEOPLE_KEY,
     JSON.stringify(people)
   );
 
-
   currentPersonId=null;
 
-
   updateHome();
-
   openPeople();
-
 }
 
 
+/* ---------- 自動オープン ---------- */
 
-/* COUNTDOWN */
+/*
+  販売日時 + URL から、その販売設定専用のキーを作る。
+  同じ販売設定で何度も自動移動しないために使う。
+*/
+function getAutoKey(){
+  return AUTO_PREFIX+
+    encodeURIComponent(
+      (settings.saleDate || "")+
+      "|" +
+      (settings.ticketUrl || "")
+    );
+}
+
+function wasAutoOpened(){
+  if(
+    !settings.saleDate ||
+    !settings.ticketUrl
+  ){
+    return false;
+  }
+
+  try{
+    return sessionStorage.getItem(getAutoKey())==="1";
+  }catch(e){
+    return autoNavigationStarted;
+  }
+}
+
+function markAutoOpened(){
+  autoNavigationStarted=true;
+
+  try{
+    sessionStorage.setItem(
+      getAutoKey(),
+      "1"
+    );
+  }catch(e){}
+}
+
+function autoOpenOnce(){
+  if(autoNavigationStarted)return;
+
+  if(!settings.saleDate || !settings.ticketUrl){
+    return;
+  }
+
+  if(wasAutoOpened()){
+    autoNavigationStarted=true;
+    return;
+  }
+
+  let url;
+
+  try{
+    url=new URL(settings.ticketUrl);
+
+    if(
+      url.protocol!=="https:" &&
+      url.protocol!=="http:"
+    ){
+      return;
+    }
+  }catch(e){
+    return;
+  }
+
+  /*
+    ページ移動より先に記録する。
+    これによりブラウザで戻った場合も自動再移動しない。
+  */
+  markAutoOpened();
+
+  window.location.href=url.href;
+}
+
+
+/* ---------- カウントダウン ---------- */
 
 function pad(n){
-
-  return String(n).padStart(
-    2,
-    "0"
-  );
-
+  return String(n).padStart(2,"0");
 }
 
-
-
 function updateCountdown(){
-
   const countdownEl=
-    document.getElementById(
-      "countdown"
-    );
+    document.getElementById("countdown");
 
   const statusEl=
-    document.getElementById(
-      "status"
-    );
+    document.getElementById("status");
 
   const openBtn=
-    document.getElementById(
-      "openBtn"
-    );
+    document.getElementById("openBtn");
 
-
-  /* 販売日時未設定 */
+  const autoStatus=
+    document.getElementById("autoStatus");
 
   if(!settings.saleDate){
-
     countdownEl.innerHTML=
       '--:--:--<span class="ms">.---</span>';
 
@@ -1699,100 +1024,89 @@ function updateCountdown(){
     openBtn.textContent=
       "今すぐぴあを開く";
 
-    return;
+    autoStatus.textContent=
+      "販売日時とURLを設定すると、自動オープンの準備ができます。";
 
+    return;
   }
 
-
   const saleTime=
-    new Date(
-      settings.saleDate
-    ).getTime();
+    new Date(settings.saleDate).getTime();
 
-
-  /* 日付が正しくない場合 */
-
-  if(
-    Number.isNaN(saleTime)
-  ){
-
+  if(Number.isNaN(saleTime)){
     countdownEl.innerHTML=
       '--:--:--<span class="ms">.---</span>';
 
     statusEl.textContent=
       "販売開始日時を確認してください";
 
+    autoStatus.textContent=
+      "販売開始日時を確認してください。";
+
     return;
-
   }
-
 
   let diff=
     saleTime-Date.now();
 
-
-  /* 販売開始 */
-
+  /*
+    販売開始時刻に到達
+  */
   if(diff<=0){
-
     countdownEl.innerHTML=
       '00:00:00<span class="ms">.000</span>';
-
 
     statusEl.textContent=
       "販売開始済み";
 
-
     if(settings.ticketUrl){
-
       openBtn.textContent=
         "もう一度ぴあを開く";
 
-    }else{
+      if(wasAutoOpened()){
+        autoStatus.textContent=
+          "自動オープン済みです。再アクセスは上のボタンを押してください。";
+      }else{
+        autoStatus.textContent=
+          "販売ページを開きます…";
+      }
 
+      /*
+        ここで1回だけ販売ページへ移動
+      */
+      autoOpenOnce();
+
+    }else{
       openBtn.textContent=
         "ぴあ販売ページ未設定";
 
+      autoStatus.textContent=
+        "販売ページURLが設定されていません。";
     }
 
-
     return;
-
   }
 
-
-  /* 販売開始前 */
-
+  /*
+    販売開始前
+  */
   const hours=
-    Math.floor(
-      diff/3600000
-    );
-
+    Math.floor(diff/3600000);
 
   diff%=3600000;
 
-
   const minutes=
-    Math.floor(
-      diff/60000
-    );
-
+    Math.floor(diff/60000);
 
   diff%=60000;
 
-
   const seconds=
-    Math.floor(
-      diff/1000
-    );
-
+    Math.floor(diff/1000);
 
   const milliseconds=
     diff%1000;
 
-
   countdownEl.innerHTML=
-
     `${pad(hours)}:`+
     `${pad(minutes)}:`+
     `${pad(seconds)}`+
@@ -1800,76 +1114,84 @@ function updateCountdown(){
     `${String(milliseconds).padStart(3,"0")}`+
     `</span>`;
 
-
   statusEl.textContent=
     "販売開始前です";
-
 
   openBtn.textContent=
     "今すぐぴあを開く";
 
+  if(settings.ticketUrl){
+    autoStatus.innerHTML=
+      `<span class="autoReady">
+        ✓ 販売開始時に1回だけ販売ページを開きます
+       </span>`;
+  }else{
+    autoStatus.textContent=
+      "販売ページURLを設定してください。";
+  }
 }
 
 
-
-/* OPEN TICKET */
+/* ---------- 手動で開く ---------- */
 
 function openTicket(){
-
   if(!settings.ticketUrl){
-
-    alert(
-      "販売ページURLが設定されていません"
-    );
-
+    alert("販売ページURLが設定されていません");
     return;
-
   }
 
-
   try{
-
     const url=
-      new URL(
-        settings.ticketUrl
-      );
-
+      new URL(settings.ticketUrl);
 
     if(
       url.protocol!=="https:" &&
       url.protocol!=="http:"
     ){
-
       throw new Error();
-
     }
 
-
-    window.location.href=
-      url.href;
-
+    /*
+      手動ボタンは何度でも使える。
+      自動連続アクセスにはしない。
+    */
+    window.location.href=url.href;
 
   }catch(e){
-
-    alert(
-      "販売ページURLを確認してください"
-    );
-
+    alert("販売ページURLを確認してください");
   }
-
 }
 
 
-
-/* START */
+/* ---------- 起動 ---------- */
 
 loadAll();
-
 updateCountdown();
 
-setInterval(
-  updateCountdown,
-  50
+/*
+  表示中は細かくカウントダウンを更新。
+  実際のページ移動時刻はブラウザ・端末・通信状況の影響を受ける。
+*/
+setInterval(updateCountdown,50);
+
+/*
+  スマホで一時的に別画面へ行ったあと戻った場合にも表示を更新。
+  ただし自動オープン済みなら再オープンしない。
+*/
+document.addEventListener(
+  "visibilitychange",
+  ()=>{
+    if(!document.hidden){
+      updateCountdown();
+    }
+  }
+);
+
+window.addEventListener(
+  "pageshow",
+  ()=>{
+    updateCountdown();
+  }
 );
 
 </script>
