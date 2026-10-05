@@ -464,6 +464,7 @@ const OLD_SETTINGS_KEY="ticketStartSettings";
 const PEOPLE_KEY="ticketStartPeople";
 const PERFORMANCES_KEY="ticketStartPerformances";
 const APP_KEY="ticketStartApp";
+const MIGRATION_KEY="ticketStartMigrationV2";
 const AUTO_PREFIX="ticketStartAutoOpened:";
 
 let people=[];
@@ -615,58 +616,71 @@ function loadAll(){
 
 
   /*
-    旧バージョンの販売設定を、
-    公演一覧がまだ空のときだけ1件として移行。
+    旧バージョンの販売設定は最初の1回だけ移行する。
+    一度この新バージョンを使った後は、公演を全部削除しても
+    昔の設定が復活しないようにする。
   */
-  if(!performances.length){
+  const migrationDone=
+    localStorage.getItem(MIGRATION_KEY)==="1";
 
-    try{
+  if(!migrationDone){
 
-      const old=
-        JSON.parse(localStorage.getItem(OLD_SETTINGS_KEY));
+    if(!performances.length){
 
-      if(
-        old &&
-        (
-          old.eventName ||
-          old.saleDate ||
-          old.ticketUrl ||
-          old.targetDate ||
-          old.seatType ||
-          old.ticketCount
-        )
-      ){
+      try{
 
-        const migrated={
-          id:makeId(),
-          eventName:old.eventName || "",
-          saleDate:old.saleDate || "",
-          ticketUrl:old.ticketUrl || "",
-          targetDate:old.targetDate || "",
-          seatType:old.seatType || "",
-          ticketCount:old.ticketCount || ""
-        };
-
-        performances.push(migrated);
-
-        appSettings.selectedPerformanceId=
-          migrated.id;
+        const old=
+          JSON.parse(localStorage.getItem(OLD_SETTINGS_KEY));
 
         if(
-          old.selectedPersonId &&
-          people.some(
-            p=>p.id===old.selectedPersonId
+          old &&
+          (
+            old.eventName ||
+            old.saleDate ||
+            old.ticketUrl ||
+            old.targetDate ||
+            old.seatType ||
+            old.ticketCount
           )
         ){
-          appSettings.selectedPersonId=
-            old.selectedPersonId;
+
+          const migrated={
+            id:makeId(),
+            eventName:old.eventName || "",
+            saleDate:old.saleDate || "",
+            ticketUrl:old.ticketUrl || "",
+            targetDate:old.targetDate || "",
+            seatType:old.seatType || "",
+            ticketCount:old.ticketCount || ""
+          };
+
+          performances.push(migrated);
+
+          appSettings.selectedPerformanceId=
+            migrated.id;
+
+          if(
+            old.selectedPersonId &&
+            people.some(
+              p=>p.id===old.selectedPersonId
+            )
+          ){
+            appSettings.selectedPersonId=
+              old.selectedPersonId;
+          }
+
+          savePerformances();
+          saveAppSettings();
         }
 
-        savePerformances();
-        saveAppSettings();
-      }
+      }catch(e){}
+    }
 
-    }catch(e){}
+    /*
+      公演がすでに新形式で保存されている場合も含め、
+      ここまで来たら移行処理は完了。
+    */
+    localStorage.setItem(MIGRATION_KEY,"1");
   }
 
 
